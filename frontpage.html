@@ -1,17 +1,388 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zto ki website</title>
+    <title>Zonal Talent Olympiad - ZTO</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f9fd;
+            color: #333;
+            background-image: url('background-pattern.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #003d66;
+        }
+        
+        p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: rgba(0, 82, 153, 0.8);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+        
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-left img {
+            height: 40px;
+            margin-right: 15px;
+        }
+        
+        .nav-left .nav-item {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-left .nav-item:hover {
+            color: #ffda79;
+        }
+        
+        .toggle-button {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 35px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 11;
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-button div {
+            width: 100%;
+            height: 3px;
+            background: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-button.active div:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .toggle-button.active div:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .toggle-button.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        .nav-items {
+            display: flex;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        #home {
+            padding-top: 80px;
+            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%);
+            text-align: center;
+            position: relative;
+        }
+        
+        #home h1 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+        
+        #home p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        
+        #dashboard {
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: left;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        #resources {
+            background-color: #f4f9fd;
+        }
+        
+        #resources h1 {
+            color: #003d66;
+        }
+        
+        #success {
+            background-color: #ffffff;
+        }
+        
+        #feedback {
+            background-color: #f4f9fd;
+        }
+        
+        #about {
+            background-color: #f4f9fd;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .nav-left {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+            .nav-left .nav-item {
+                margin: 5px 0;
+            }
+            .toggle-button {
+                display: flex;
+            }
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(0, 82, 153, 0.8);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                z-index: 9;
+            }
+            .nav-items.active {
+                display: flex;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .cta-button {
+                font-size: 1em;
+            }
+            .dashboard-card {
+                margin: 10px 0;
+                padding: 15px;
+            }
+            textarea {
+                width: 90%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <nav>
-        logo will be here.
+
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <img src="logo.png" alt="ZTO Logo">
+
+            <button class="toggle-button" id="toggle-button">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div class="nav-items" id="nav-items">
+                <a href="#home" class="nav-item">Home</a>
+
+                <a href="#about" class="nav-item">About Us</a>
+                <a href="#dashboard" class="nav-item">Dashboard</a>
+
+                <a href="#resources" class="nav-item">Resources</a>
+
+                <a href="#success" class="nav-item">Success Stories</a>
+
+                <a href="#feedback" class="nav-item">Feedback</a>
+
+            </div>
+        </div>
     </nav>
+
+
+    <section id="home" class="section">
+        <div class="glass">
+            <h1>Welcome to the Zonal Talent Olympiad!</h1>
+            <p>Enhancing Academic Excellence through Competition.</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+
+
+
+    <section id="dashboard" class="section">
+        <div class="glass">
+            <h1>Dashboard</h1>
+            <div class="dashboard-card">
+                <h2>Upcoming Tests</h2>
+                <p>Check the schedule for upcoming tests and events.</p>
+                <button class="cta-button">View Schedule</button>
+            </div>
+            <div class="dashboard-card">
+                <h2>Registration Status</h2>
+                <p>View your current registration status for tests.</p>
+                <button class="cta-button">Check Status</button>
+            </div>
+            <div class="dashboard-card">
+                <h2>Leaderboard</h2>
+                <p>See how you rank among other participants.</p>
+                <button class="cta-button">View Leaderboard</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="resources" class="section">
+        <div class="glass">
+            <h1>Resources</h1>
+            <p>Access study materials, practice tests, and educational resources to help you excel.</p>
+            <div class="dashboard-card">
+                <h2>Study Materials</h2>
+                <button class="cta-button">Download Resources</button>
+            </div>
+            <div class="dashboard-card">
+                <h2>Practice Tests</h2>
+                <button class="cta-button">Take Practice Tests</button>
+            </div>
+            <div class="dashboard-card">
+                <h2>Webinars</h2>
+                <button class="cta-button">Join Webinars</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="success" class="section">
+        <div class="glass">
+            <h1>Success Stories</h1>
+            <div class="dashboard-card">
+                <h2>Virat kohli</h2>
+                <p>"I scored in the top 10% of the ZTO, which helped me earn a scholarship for my college education!"</p>
+            </div>
+            <div class="dashboard-card">
+                <h2>Rohit Sharma</h2>
+                <p>"Thanks to the resources and guidance from ZTO, I was able to achieve my dream of getting into my preferred college!"</p>
+            </div>
+            <div class="dashboard-card">
+                <h2>MS dhoni</h2>
+                <p>"The experience of competing in the ZTO was life-changing. I learned so much and made great friends along the way!"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="feedback" class="section">
+        <div class="glass">
+            <h1>Feedback and Help</h1>
+            <p>Your feedback is valuable to us! Let us know how we can improve.</p>
+            <form action="#" method="post">
+                <textarea name="feedback" rows="4" placeholder="Share your feedback or ask for help..."></textarea>
+                <br>
+                <button type="submit" class="cta-button">Submit Feedback</button>
+            </form>
+            <p>If you need immediate assistance, please contact us at <a href="mailto:support@zto.com">support@zto.com</a>.</p>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="glass">
+            <h1>About Us</h1>
+            <p>The Zonal Test Olympiad is an initiative to encourage academic excellence among students by providing a platform for competition and recognition.</p>
+        </div>
+    </section>
+
+    <script>
+        const toggleButton = document.getElementById('toggle-button');
+        const navItems = document.getElementById('nav-items');
+
+        toggleButton.addEventListener('click', () => {
+            navItems.classList.toggle('active');
+            toggleButton.classList.toggle('active');
+        });
+    </script>
 </body>
+
 </html>
-=======
-<h1>Ashish Maurya<h1>
->>>>>>> b77ddc08b4bf622a8b5b15394c1304302a4c2c48
