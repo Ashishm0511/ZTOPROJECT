@@ -47,12 +47,12 @@
         
         .navbar {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content:space-evenly;
+            align-items: right;
             padding: 10px 20px;
-            background: rgba(0, 82, 153, 0.8);
+            background: rgba(0, 153, 153, 0.8);
             backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(145, 157, 155, 0.667);
             position: fixed;
             top: 0;
             left: 0;
@@ -62,7 +62,9 @@
         
         .nav-left {
             display: flex;
-            align-items: center;
+            
+            align-items: left;
+
         }
         
         .nav-left img {
@@ -81,6 +83,52 @@
         .nav-left .nav-item:hover {
             color: #ffda79;
         }
+        #greetmsg {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding-top: 50px;
+            padding-bottom: 5px;
+            /* background-color:#f4f9fd;
+             */
+             background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
+            /* flex-direction:column; */
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 50%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: black;
+            }
+        }
+
+        #typewriter-text1 {
+            display:flex;
+            align-items: center;
+            overflow: hidden;
+            border-right: 3px solid black;
+            white-space: nowrap;
+            letter-spacing: 0.15em;
+            animation: typewriter 2.5s steps(20, end), blink-caret 0.75s step-end infinite;
+            font-size: 1.5em;
+            font-weight: bold;
+            width: fit-content;
+        }
+
         
         .toggle-button {
             display: none;
@@ -119,12 +167,17 @@
             display: flex;
             transition: max-height 0.3s ease-in-out;
         }
+
+        
+        
         
         #home {
+            
             padding-top: 80px;
             background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%);
             text-align: center;
             position: relative;
+        
         }
         
         #home h1 {
@@ -246,11 +299,12 @@
 
 <body>
 
-
+     
     <nav class="navbar" id="navbar">
         <div class="nav-left">
+            
             <img src="logo.png" alt="ZTO Logo">
-
+           
             <button class="toggle-button" id="toggle-button">
                 <div></div>
                 <div></div>
@@ -271,6 +325,12 @@
             </div>
         </div>
     </nav>
+
+    <section id="greetmsg">
+
+        <h4 id="typewriter-text1">Hey there, champ! 🌟 Welcome to the Zonal Talent Olympiad (ZTO)</h4>
+        <!-- <h4 id="typewriter-text2">Welcome to the Zonal Talent Olympiad (ZTO)!</h4> -->
+    </section>
 
 
     <section id="home" class="section">
