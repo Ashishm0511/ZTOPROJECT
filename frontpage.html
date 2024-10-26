@@ -389,8 +389,16 @@
             <div class="dashboard-card">
                 <h2>Upcoming Tests</h2>
                 <p>Check the schedule for upcoming tests and events.</p>
-                <button class="cta-button">View Schedule</button>
+               
+                <button class="cta-button" onclick="document.getElementById('scheduleNotification').style.display='block';">View Schedule</button>
+    
+    <!-- Notification message hidden by default -->
+    <p id="scheduleNotification" style="display: none;">You will be notified soon 😊</p>
+             
+
+
             </div>
+           
             <div class="dashboard-card">
                 <h2>Registration Status</h2>
                 <p>View your current registration status for tests.</p>
@@ -399,8 +407,10 @@
             <div class="dashboard-card">
                 <h2>Leaderboard</h2>
                 <p>See how you rank among other participants.</p>
-                <button class="cta-button">View Leaderboard</button>
-            </div>
+                 <button class="cta-button" onclick="document.getElementById('leaderboardNotification').style.display='block';">View Leaderboard</button>
+                <!-- Notification message hidden by default -->
+              <p id="leaderboardNotification" style="display: none;">"You will be notified as soon as the results are available!😊</p>
+            
         </div>
     </section>
 
@@ -411,15 +421,22 @@
             <p>Access study materials, practice tests, and educational resources to help you excel.</p>
             <div class="dashboard-card">
                 <h2>Study Materials</h2>
-                <button class="cta-button">Download Resources</button>
+                <a href="path/to/your-file.pdf" download="StudyMaterial.pdf" style="text-decoration: none;">
+        <button class="cta-button">Download Resources</button>
+    </a>
+
             </div>
             <div class="dashboard-card">
                 <h2>Practice Tests</h2>
-                <button class="cta-button">Take Practice Tests</button>
+                 <a href="path/to/your-file.pdf" download="StudyMateria.pdf" style="text-decoration: none;">
+        <button class="cta-button">Download Resources</button>
+    </a>
+
             </div>
             <div class="dashboard-card">
                 <h2>Webinars</h2>
-                <button class="cta-button">Join Webinars</button>
+                <button class="cta-button" onclick="document.getElementById('webinarNotification').style.display='block';">Join Webinars</button>
+                <p id="webinarNotification" style="display: none;">Looking forward to learning together! Future webinars will appear here.😊</p>
             </div>
         </div>
     </section>
