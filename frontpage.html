@@ -6,329 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type = "image/x-icon" href="C:\Users\hp\Desktop\logo.jpeg">
     <title>Zonal Talent Olympiad - ZTO</title>
-    <style>
-                 
-                 
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f9fd;
-            color: #333;
-            background-image: url('background-pattern.png');
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-        }  
-        
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-            min-height: 100vh;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #003d66;
-        }
-        
-        p {
-            font-size: 1.1em;
-            color: #555;
-        }
-        
-        .glass {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content:space-evenly;
-            align-items: right;
-            padding: 10px 20px;
-            background: rgba(0, 153, 153, 0.8);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(145, 157, 155, 0.667);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-        }
-        
-        .nav-left {
-            display: flex;
-            
-            align-items: left;
-
-        }
-        
-        .nav-left img {
-            height: 40px;
-            margin-right: 15px;
-        }
-        
-        .nav-left .nav-item {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 15px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-left .nav-item:hover {
-            color: #ffda79;
-        }
-        #greetmsg {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            padding-top: 50px;
-            padding-bottom: 1px;
-            /* background-color:#f4f9fd;
-             */
-             background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-            /* flex-direction:column; */
-        }
-        #greetmsg1 {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            padding-top: 0px;
-            padding-bottom: 0px;
-            /* background-color:#f4f9fd;
-             */
-             background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-            /* flex-direction:column; */
-        }
-
-        @keyframes typewriter {
-            from {
-                width: 0;
-            }
-
-            to {
-                width: 50%;
-            }
-        }
-
-        @keyframes blink-caret {
-            from,
-            to {
-                border-color: transparent;
-            }
-
-            50% {
-                border-color: black;
-            }
-        }
-
-        #typewriter-text1 {
-            display:flex;
-            align-items: center;
-            overflow: hidden;
-            border-right: 3px solid black;
-            white-space: nowrap;
-            letter-spacing: 0.15em;
-            animation: typewriter 2.5s steps(20, end), blink-caret 0.75s step-end infinite;
-            font-size: 1.5em;
-            font-weight: bold;
-            width: fit-content;
-        }
-
-        
-        .toggle-button {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 35px;
-            height: 25px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 11;
-            transition: transform 0.3s ease;
-        }
-        
-        .toggle-button div {
-            width: 100%;
-            height: 3px;
-            background: white;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .toggle-button.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .toggle-button.active div:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .toggle-button.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
-        
-        .nav-items {
-            display: flex;
-            transition: max-height 0.3s ease-in-out;
-        }
-
-        
-        
-        
-        #home {
-            
-            padding-top: 80px;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%);
-            text-align: center;
-            position: relative;
-        
-        }
-        
-        #home h1 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
-        
-        #home p {
-            font-size: 1.3em;
-            margin-bottom: 30px;
-        }
-        
-        .cta-button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            font-size: 1.1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: #218838;
-        }
-        
-        #dashboard {
-            background-color: #ffffff;
-            color: #333;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-
-        }
-        
-        .dashboard-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            text-align: left;
-            /* background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%) */
-        }
-        
-        .dashboard-card:hover {
-            transform: translateY(-5px);
-            /* background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%) */
-        }
-        
-        #resources {
-            background-color: #f4f9fd;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-        }
-        
-        #resources h1 {
-            color: #003d66;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-        }
-        
-        #success {
-            background-color: #ffffff;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-            
-        }
-        
-        #feedback {
-            background-color: #f4f9fd;
-            background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
-        }
-        
-        #about {
-            background-color: #f4f9fd;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .nav-left {
-                flex-direction: column;
-                align-items: flex-start;
-                width: 100%;
-            }
-            .nav-left .nav-item {
-                margin: 5px 0;
-            }
-            .toggle-button {
-                display: flex;
-            }
-            .nav-items {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: rgba(0, 82, 153, 0.8);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                z-index: 9;
-            }
-            .nav-items.active {
-                display: flex;
-            }
-            h1 {
-                font-size: 2.2em;
-            }
-            p {
-                font-size: 1em;
-            }
-            .cta-button {
-                font-size: 1em;
-            }
-            .dashboard-card {
-                margin: 10px 0;
-                padding: 15px;
-            }
-            textarea {
-                width: 90%;
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    
 </head>
 
 <body>
 
      
     <nav class="navbar" id="navbar">
+        <div id="logo"><img src="file/images/ztolog.png" alt="ZTO Logo" style="height: 40px;"></div>
         <div class="nav-left">
-            
-            <img src="file/images/ztolog.png" alt="ZTO Logo" style="height: 40px;">
-           
             <button class="toggle-button" id="toggle-button">
                 <div></div>
                 <div></div>
@@ -336,19 +23,15 @@
             </button>
             <div class="nav-items" id="nav-items">
                 <a href="#home" class="nav-item">Home</a>
-
                 <a href="#about" class="nav-item">About Us</a>
                 <a href="#dashboard" class="nav-item">Dashboard</a>
-
                 <a href="#resources" class="nav-item">Resources</a>
-
-                <a href="#success" class="nav-item">perks & advantages</a>
-
+                <a href="#success" class="nav-item">Perks & Advantages</a>
                 <a href="#feedback" class="nav-item">Feedback</a>
-
             </div>
         </div>
     </nav>
+    
 
     <section id ="greetmsg">
 
@@ -389,9 +72,9 @@
             <div class="dashboard-card">
                 <h2>Upcoming Tests</h2>
                 <p>Check the schedule for upcoming tests and events.</p>
-               
-                <button class="cta-button" onclick="document.getElementById('scheduleNotification').style.display='block';">View Schedule</button>
-    
+                <button class="cta-button" onclick="toggleNotification('scheduleNotification')">View Leaderboard</button>
+                <!-- <button class="cta-button" onclick="document.getElementById('scheduleNotification').style.display='block';">View Schedule</button> -->
+                
     <!-- Notification message hidden by default -->
     <p id="scheduleNotification" style="display: none;">You will be notified soon 😊</p>
              
@@ -402,13 +85,25 @@
             <div class="dashboard-card">
                 <h2>Registration Status</h2>
                 <p>View your current registration status for tests.</p>
-                <button class="cta-button">Check Status</button>
+                <!-- <button class="cta-button" onclick="document.getElementById('scheduleNotification1').style.display='block';">Registration Status</button> -->
+                <button class="cta-button" onclick="toggleNotification('scheduleNotification1')">View Leaderboard</button>
+                <!-- Notification message hidden by default -->
+                <!-- <p id="scheduleNotification1" style="display: none;">If you have already registered please check your registered E-mail <br> OR you can contact us at : </p> -->
+                <p id="scheduleNotification1" style="display: none;">
+                    If you have already registered, please check your registered E-mail
+                    
+                    <span style="display: block; text-align: center; font-weight: bold;">OR</span>
+                    
+                    you can contact us at: teamworkzto1@gmail.com
+                  </p>
+                  
             </div>
             <div class="dashboard-card">
                 <h2>Leaderboard</h2>
                 <p>See how you rank among other participants.</p>
-                 <button class="cta-button" onclick="document.getElementById('leaderboardNotification').style.display='block';">View Leaderboard</button>
+                 <!-- <button class="cta-button" onclick="document.getElementById('leaderboardNotification').style.display='block';">View Leaderboard</button> -->
                 <!-- Notification message hidden by default -->
+                <button class="cta-button" onclick="toggleNotification('leaderboardNotification')">View Leaderboard</button>
               <p id="leaderboardNotification" style="display: none;">"You will be notified as soon as the results are available!😊</p>
             
         </div>
@@ -435,18 +130,12 @@
             </div>
             <div class="dashboard-card">
                 <h2>Webinars</h2>
-                <button class="cta-button" onclick="document.getElementById('webinarNotification').style.display='block';">Join Webinars</button>
-                <p id="webinarNotification" style="display: none;">Looking forward to learning together! Future webinars will appear here.😊</p>
+                <!-- <button class="cta-button" onclick="document.getElementById('webinarNotification').style.display='block';">Join Webinars</button> -->
+                <button class="cta-button" onclick="toggleNotification('webinarNotification')">View Leaderboard</button>
+                <p id="webinarNotification" style="display: none;">Stay tuned with us on our social media plateforms for Future webinars and events here.😊</p>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
 
 
 
@@ -540,6 +229,18 @@
         </div>
     </section>
 
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo"></a>
+            <!-- <a href="https://twitter.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/60/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png" alt="Twitter Logo"></a> -->
+            <a href="https://www.instagram.com/zonal_talent_olympiad/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo"></a>
+            <a href="https://www.linkedin.com/in/m-d-rizwan-3b3141255/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn Logo"></a>
+            <a href="https://wa.me/6386137862" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo"></a>
+        </div>
+        <p>&copy; 2018 Zonal Talent Olympiad. All Rights Reserved.</p>
+    </footer>
+
+
     <script>
         const toggleButton = document.getElementById('toggle-button');
         const navItems = document.getElementById('nav-items');
@@ -548,6 +249,12 @@
             navItems.classList.toggle('active');
             toggleButton.classList.toggle('active');
         });
+
+        function toggleNotification(notificationId) {
+            const notification = document.getElementById(notificationId);
+            notification.style.display = (notification.style.display === "none" || notification.style.display === "") ? "block" : "none";
+        }
+
     </script>
 </body>
 
