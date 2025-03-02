@@ -36,7 +36,7 @@
 
     <section id ="greetmsg">
 
-        <h4 id="typewriter-text1">Hey there, champ! 🌟 Welcome to the Zonal Talent Olympiad (ZTO)</h4>
+        <!--h4 id="typewriter-text1">Hey there, champ! 🌟 Welcome to the Zonal Talent Olympiad (ZTO)</h4> -->
         
 
         <!-- <h4 id="typewriter-text2">Welcome to the Zonal Talent Olympiad (ZTO)!</h4> -->
@@ -44,7 +44,7 @@
 
     <section id="greetmsg1">
 
-        <h4 id="typewriter-text1"> Join us on this thrilling journey to represent yourself and your institute at the top with pride!</h4>
+        <!--h4 id="typewriter-text1"> Join us on this thrilling journey to represent yourself and your institute at the top with pride!</h4> -->
            
         
 
@@ -62,8 +62,29 @@
     </section>
     <section>
     <div style="text-align: center;">
-    <a href="https://docs.google.com/spreadsheets/d/1UIIG0yh9sfIXTj2ePoGJmz2uylJGBubkgpI31nUQotA/edit?usp=sharing" <button class="cta-button1">Result</button></a>
+    <details>
+            <summary class="cta-button1" style="display: inline-block; cursor: pointer; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">
+                Result
+            </summary>
+
+            <div style="margin-top: 10px;">
+                <select id="resultDropdown" onchange="updateLink()">
+                    <option value="" disabled selected>Select your Institute</option>
+                    <option value="https://docs.google.com/spreadsheets/d/1UIIG0yh9sfIXTj2ePoGJmz2uylJGBubkgpI31nUQotA/edit?usp=sharing">JHSN School</option>
+                    <option value="https://example.com/option2">BDS Public school</option>
+                    <option value="https://example.com/option3">Divine Coaching</option>
+                    <option value="https://example.com/option4">Rudra Coaching</option>
+                    <option value="https://example.com/option5">Krishna Coaching</option>
+                    <option value="https://example.com/option6">LL Coaching</option>
+                </select>
+                <br><br>
+                <a id="goButton" href="#" target="_blank" style="padding: 8px 15px; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer; text-decoration: none;">
+                    Go
+                </a>
+            </div>
+        </details>
     </div>
+    
     </section>
 
     <style>
@@ -120,7 +141,7 @@
                 <p>See how you rank among other participants.</p>
                  <!-- <button class="cta-button" onclick="document.getElementById('leaderboardNotification').style.display='block';">View Leaderboard</button> -->
                 <!-- Notification message hidden by default -->
-                <button class="cta-button" onclick="toggleNotification('leaderboardNotification')">View Leaderboard</button>
+                <button class="cta-button" onclick="toggleNotification('leaderboardNotification')">View Results</button>
               <p id="leaderboardNotification" style="display: none;">"You will be notified as soon as the results are available!😊</p>
             
         </div>
