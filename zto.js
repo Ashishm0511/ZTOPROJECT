@@ -1,2 +1,7 @@
-alert("This website is under maintenance.");
+lert("This website is under maintenance.");
 console.log("hii");
+function updateLink() {
+        var dropdown = document.getElementById("resultDropdown");
+        var link = document.getElementById("goButton");
+        link.href = dropdown.value; // Updates the link dynamically
+    }
