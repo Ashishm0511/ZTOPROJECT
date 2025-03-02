@@ -109,6 +109,17 @@
              background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
             /* flex-direction:column; */
         }
+        #greetmsg2 {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            /* background-color:#f4f9fd;
+             */
+             background-image: linear-gradient(135deg, #dff3ff 0%, #f4f9fd 100%)
+            /* flex-direction:column; */
+        }
 
         @keyframes typewriter {
             from {
@@ -215,7 +226,17 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        
+      .cta-button1 {
+            padding: 15px 20px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+ 
         .cta-button:hover {
             background-color: #218838;
         }
